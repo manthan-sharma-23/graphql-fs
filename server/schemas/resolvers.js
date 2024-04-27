@@ -4,10 +4,14 @@ const { UserList, MovieList } = require("./fakeData")
 const resolvers = {
     Query: {
         users: () => {
-            return UserList;
+
+            return UserList
         },
         user: (_, args) => {
+            console.log("Hey")
             const id = args.id
+
+            console.log(id)
 
             return UserList.find((user) => user.id === Number(id))
         },
@@ -31,7 +35,7 @@ const resolvers = {
             console.log(user)
             return user
         },
-        
+
     }
 }
 
